@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
 
+import Orders from "./components/pages/Orders";
+import Menu from "./components/pages/Menu";
+import NewDish from "./components/pages/NewDish";
+import { Route, Link, Switch } from "react-router-dom";
+import SideMenu from "./components/ui/SideMenu";
+import firebase, { FirebaseContext } from "./firebase";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FirebaseContext.Provider
+      value={{
+        firebase,
+      }}
+    >
+      <div className="md:flex min-h-screen">
+        <SideMenu />
+        <div className="md:w-3/5 xl:w-4/5 p-6">
+          <Switch>
+            <Route exact path="/">
+              <Orders />
+            </Route>
+            <Route path="/menu">
+              <Menu />
+            </Route>
+            <Route path="/newdish">
+              <NewDish />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </FirebaseContext.Provider>
   );
 }
 
