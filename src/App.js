@@ -6,6 +6,7 @@ import NewDish from "./components/pages/NewDish";
 import { Route, Link, Switch } from "react-router-dom";
 import SideMenu from "./components/ui/SideMenu";
 import firebase, { FirebaseContext } from "./firebase";
+import NewOrder from "./components/pages/NewOrder";
 function App() {
   return (
     <FirebaseContext.Provider
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/newdish">
               <NewDish />
+            </Route>
+            <Route path="/newOrder">
+              <NewOrder />
             </Route>
           </Switch>
         </div>

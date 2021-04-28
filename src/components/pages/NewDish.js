@@ -28,15 +28,15 @@ const NewDish = () => {
     },
     validationSchema: Yup.object({
       name: Yup.string()
-        .min(3, "Los Platillos deben tener al menos 3 caracteres")
-        .required("El Nombre del platillo es obligatorio"),
+        .min(3, "Item name Must be More than 3 letters")
+        .required("Please enter Item Name"),
       price: Yup.number()
-        .min(1, "Debes agregar un número")
-        .required("El Precio es obligatorio"),
-      category: Yup.string().required("La categoría es obligatoria"),
+        .min(1, "Price must be a valid number")
+        .required("Please enter price"),
+      category: Yup.string().required("Please choose a category"),
       description: Yup.string()
-        .min(10, "La descripción debe ser más larga")
-        .required("La descripción es obligatoria"),
+        .min(25, "Please enter description about the item")
+        .required("You need to enter a valid Description"),
     }),
     onSubmit: (dish) => {
       try {
