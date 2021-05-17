@@ -149,11 +149,10 @@ const NewDish = () => {
               >
                 <option value="">-- Select --</option>
                 <option value="breakfast">Breakfast</option>
-                <option value="meal">Lunch</option>
+                <option value="lunch">Lunch</option>
                 <option value="dinner">Dinner</option>
-                <option value="beverages">Drinks</option>
+                <option value="drinks">Drinks</option>
                 <option value="dessert">Starter</option>
-                <option value="salad">Salad</option>
               </select>
             </div>
             {formik.touched.category && formik.errors.category ? (
